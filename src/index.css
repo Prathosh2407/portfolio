@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-dark-950 text-slate-100 antialiased selection:bg-accent-cyan/30 selection:text-accent-cyan overflow-x-hidden;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #05070d;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #334155;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-dark-900/70 backdrop-blur-xl border border-white/[0.08] shadow-[0_8px_32px_0_rgba(0,0,0,0.37)];
+  }
+
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300 hover:border-accent-cyan/40 hover:shadow-[0_0_25px_rgba(0,240,255,0.15)] hover:-translate-y-1;
+  }
+
+  .glass-pill {
+    @apply bg-dark-850/80 backdrop-blur-md border border-white/[0.07] text-slate-300;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-accent-cyan via-accent-violet to-fuchsia-400;
+  }
+
+  .text-gradient-cyan {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-teal-300 to-accent-emerald;
+  }
+
+  .text-gradient-amber {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-amber-400 via-orange-400 to-rose-400;
+  }
+
+  .cyber-border {
+    position: relative;
+  }
+
+  .cyber-border::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    background: linear-gradient(90deg, #00F0FF, #8B5CF6, #10B981, #00F0FF);
+    border-radius: inherit;
+    z-index: -1;
+    background-size: 300% 300%;
+    animation: borderGradient 8s ease infinite;
+    opacity: 0.3;
+  }
+
+  .cyber-border:hover::before {
+    opacity: 0.8;
+  }
+}
+
+@keyframes borderGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
