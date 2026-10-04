@@ -113,8 +113,8 @@ export default function Navbar() {
 
             {/* Resume Button */}
             <a
-              href="/Prathosh_RP_Resume.pdf"
-              download="Prathosh_RP_Resume.pdf"
+              href={PERSONAL_INFO.resumeUrl || "/resume.pdf"}
+              download={PERSONAL_INFO.resumeFileName || "resume.pdf"}
               className="group flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/[0.05] hover:bg-white/[0.1] border border-white/10 hover:border-accent-cyan/50 text-xs font-medium text-slate-200 hover:text-white transition-all duration-200 shadow-sm"
             >
               <Download className="w-3.5 h-3.5 text-accent-cyan transition-transform group-hover:-translate-y-0.5" />
@@ -155,8 +155,8 @@ export default function Navbar() {
               ))}
               <div className="pt-2 flex flex-col gap-2">
                 <a
-                  href="/Prathosh_RP_Resume.pdf"
-                  download="Prathosh_RP_Resume.pdf"
+                  href={PERSONAL_INFO.resumeUrl || "/resume.pdf"}
+                  download={PERSONAL_INFO.resumeFileName || "resume.pdf"}
                   onClick={() => setMobileMenuOpen(false)}
                   className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-gradient-to-r from-accent-cyan to-accent-violet text-dark-950 font-semibold text-xs transition-opacity hover:opacity-95"
                 >

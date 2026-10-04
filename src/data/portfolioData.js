@@ -1,25 +1,54 @@
+/**
+ * =========================================================================
+ * 🌟 PORTFOLIO DATA CONFIGURATION
+ * =========================================================================
+ * You can edit all your personal info, projects, skills, and resume details
+ * directly in this file. Everything in the portfolio updates automatically!
+ */
+
 export const PERSONAL_INFO = {
+  // Your Name & Titles
   name: "Prathosh R P",
   githubUsername: "Prathosh2407",
   role: "Full Stack & Frontend Engineer",
   tagline: "Building high-performance web applications, intelligent systems, and data-driven user experiences.",
   bio: "Full Stack Developer passionate about crafting modern React applications, scalable Node.js architectures, and intelligent systems. Experienced in building decision-support platforms like GreenFleet Optimizer and full-stack solutions with JWT security and Supabase.",
+  
+  // Status Badge
   status: "Available for new projects & collaborations",
   availabilityBadge: "Available for work",
   location: "India / Remote",
+
+  // -----------------------------------------------------------------------
+  // 📄 RESUME SETTINGS
+  // Put your real PDF file inside the "public" folder (e.g. public/resume.pdf).
+  // If you name your file "my_resume.pdf", change resumeUrl to "/my_resume.pdf".
+  // -----------------------------------------------------------------------
+  resumeUrl: "/resume.pdf",
+  resumeFileName: "Prathosh_Resume.pdf",
+
+  // Contact & Social Links
   email: "myselfprathosh240907@gmail.com",
   github: "https://github.com/Prathosh2407",
   linkedin: "https://linkedin.com/in/prathosh-rp",
   twitter: "https://twitter.com/Prathosh2407",
   avatar: "https://avatars.githubusercontent.com/u/231250763?v=4",
+
+  // Quick stats displayed in Hero
   stats: [
     { label: "Public Repositories", value: "5" },
     { label: "Core Stack", value: "React • Node" },
-    { label: "Performance Target", value: "60 FPS" },
-    { label: "Database / Cloud", value: "Supabase • SQL" },
+    { label: "Target Framerate", value: "60 FPS" },
+    { label: "Cloud & Database", value: "Supabase • SQL" },
   ]
 };
 
+/**
+ * =========================================================================
+ * 🚀 PROJECTS SECTION
+ * Add, remove, or modify your featured projects here.
+ * =========================================================================
+ */
 export const PROJECTS = [
   {
     id: "greenfleet-optimizer",
@@ -42,7 +71,6 @@ export const PROJECTS = [
     tags: ["React", "Node.js", "Express", "JWT", "Bcrypt", "SQL.js", "Node-Cron", "Vite"],
     liveUrl: "https://github.com/Prathosh2407/hacktrack-ai",
     githubUrl: "https://github.com/Prathosh2407/hacktrack-ai",
-    backendGithubUrl: "https://github.com/Prathosh2407/hacktrack-ai-backend",
     metrics: "Secure Auth Pipeline • Dual Client-Server Architecture",
     featured: true,
   },
@@ -60,6 +88,12 @@ export const PROJECTS = [
   }
 ];
 
+/**
+ * =========================================================================
+ * 🛠️ SKILLS SECTION
+ * Edit skills, proficiency percentages, and categories.
+ * =========================================================================
+ */
 export const SKILL_CATEGORIES = [
   {
     title: "Frontend Development",
@@ -109,6 +143,12 @@ export const SKILL_CATEGORIES = [
   }
 ];
 
+/**
+ * =========================================================================
+ * 💼 EXPERIENCE & TIMELINE
+ * Update your work history, projects, and achievements.
+ * =========================================================================
+ */
 export const EXPERIENCES = [
   {
     id: "fullstack-greenfleet-2026",
