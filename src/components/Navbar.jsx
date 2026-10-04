@@ -68,7 +68,7 @@ export default function Navbar() {
                 <span className="inline-block w-1.5 h-1.5 rounded-full bg-accent-cyan animate-pulse" />
               </span>
               <span className="text-[10px] text-slate-400 font-mono tracking-wider uppercase -mt-0.5">
-                SOFTWARE ENGINEER and creative_telemetry.sys with engineer_telemetry.sys.
+                SOFTWARE ENGINEER 
               </span>
             </div>
           </a>
