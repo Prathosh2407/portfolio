@@ -132,7 +132,7 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* Right Column: Interactive Creative Developer HUD Card */}
+          {/* Right Column: Interactive SOFTWARE ENGINEER and creative_telemetry.sys with engineer_telemetry.sys.eloper HUD Card */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
