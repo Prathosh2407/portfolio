@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDown, Download, CheckCircle, Sparkles, Terminal, Code2, Cpu, ExternalLink } from 'lucide-react';
+import { ArrowDown, Download, CheckCircle, Sparkles, Terminal, Code2, Cpu, ExternalLink, Github } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
@@ -30,25 +30,45 @@ export default function Hero() {
           {/* Left Column: Headlines, Bio, CTAs */}
           <div className="lg:col-span-7 flex flex-col items-start text-left">
             
-            {/* Live Status Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-dark-900/90 border border-emerald-500/30 backdrop-blur-md mb-6 shadow-[0_0_20px_rgba(16,185,129,0.15)] group cursor-default"
-            >
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-emerald opacity-80" />
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-accent-emerald shadow-[0_0_8px_#10B981]" />
-              </span>
-              <span className="text-xs font-mono font-medium text-emerald-300">
-                {PERSONAL_INFO.availabilityBadge}
-              </span>
-              <span className="text-slate-600 font-mono">•</span>
-              <span className="text-[11px] text-slate-400 group-hover:text-slate-300 transition-colors">
-                Available for Q4 / 2027 projects
-              </span>
-            </motion.div>
+            {/* Live Status Badge & GitHub profile pill */}
+            <div className="flex flex-wrap items-center gap-3 mb-6">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-dark-900/90 border border-emerald-500/30 backdrop-blur-md shadow-[0_0_20px_rgba(16,185,129,0.15)] group cursor-default"
+              >
+                <span className="relative flex h-2.5 w-2.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-emerald opacity-80" />
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-accent-emerald shadow-[0_0_8px_#10B981]" />
+                </span>
+                <span className="text-xs font-mono font-medium text-emerald-300">
+                  {PERSONAL_INFO.availabilityBadge}
+                </span>
+                <span className="text-slate-600 font-mono">•</span>
+                <span className="text-[11px] text-slate-400 group-hover:text-slate-300 transition-colors">
+                  Open for opportunities
+                </span>
+              </motion.div>
+
+              <motion.a
+                href={PERSONAL_INFO.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.05 }}
+                className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-dark-900/80 border border-white/10 hover:border-accent-cyan/40 text-xs font-mono text-slate-300 hover:text-white transition-all shadow-sm"
+              >
+                <img
+                  src={PERSONAL_INFO.avatar}
+                  alt={PERSONAL_INFO.name}
+                  className="w-4 h-4 rounded-full border border-accent-cyan/40"
+                />
+                <span>@{PERSONAL_INFO.githubUsername}</span>
+                <ExternalLink className="w-3 h-3 text-accent-cyan" />
+              </motion.a>
+            </div>
 
             {/* Main Animated Headline */}
             <motion.div
@@ -59,8 +79,8 @@ export default function Hero() {
             >
               <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-white leading-[1.1] sm:leading-[1.12]">
                 Architecting <br />
-                <span className="text-gradient">Fluid & Immersive</span> <br />
-                Digital Realities.
+                <span className="text-gradient">Intelligent & Scalable</span> <br />
+                Web Platforms.
               </h1>
             </motion.div>
 
@@ -86,21 +106,21 @@ export default function Hero() {
                 href="#projects"
                 className="group relative inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-gradient-to-r from-accent-cyan via-accent-violet to-fuchsia-500 font-semibold text-dark-950 text-sm shadow-[0_0_30px_rgba(0,240,255,0.35)] hover:shadow-[0_0_40px_rgba(139,92,246,0.5)] transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
               >
-                <span>View Selected Work</span>
+                <span>Explore GitHub Work</span>
                 <ArrowDown className="w-4 h-4 transition-transform group-hover:translate-y-1" />
               </a>
 
               {/* Download Resume Button */}
               <a
-                href="/Alex_Rivera_Resume.pdf"
-                download="Alex_Rivera_Resume.pdf"
+                href="/Prathosh_RP_Resume.pdf"
+                download="Prathosh_RP_Resume.pdf"
                 onClick={triggerDownload}
                 className="group relative inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl glass-card hover:bg-white/[0.08] border border-white/10 hover:border-accent-cyan/40 text-slate-200 hover:text-white font-medium text-sm transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
               >
                 {downloading ? (
                   <>
                     <CheckCircle className="w-4 h-4 text-accent-emerald animate-bounce" />
-                    <span className="text-emerald-300">Downloaded!</span>
+                    <span className="text-emerald-300">Downloaded CV!</span>
                   </>
                 ) : (
                   <>
@@ -111,7 +131,7 @@ export default function Hero() {
               </a>
             </motion.div>
 
-            {/* Live Performance Stats row */}
+            {/* Live Stats row */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -132,7 +152,7 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* Right Column: Interactive Creative Developer HUD Card */}
+          {/* Right Column: Interactive Developer HUD Card */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -150,7 +170,7 @@ export default function Hero() {
                     <span className="w-3 h-3 rounded-full bg-emerald-500/80 inline-block" />
                   </div>
                   <span className="text-[11px] font-mono text-slate-400 ml-2">
-                    creative-telemetry.sys
+                    github.prathosh.sys
                   </span>
                 </div>
 
@@ -163,9 +183,9 @@ export default function Hero() {
               {/* Code / Telemetry Tabs */}
               <div className="flex gap-2 mb-3.5">
                 {[
-                  { id: 'stack', label: 'Tech Pipeline' },
-                  { id: 'diagnostics', label: 'Vitals (60 FPS)' },
-                  { id: 'manifesto', label: 'Manifesto' },
+                  { id: 'stack', label: 'Tech Stack' },
+                  { id: 'diagnostics', label: 'Engineering' },
+                  { id: 'manifesto', label: 'Vision' },
                 ].map((tab) => (
                   <button
                     key={tab.id}
@@ -185,58 +205,58 @@ export default function Hero() {
               <div className="rounded-xl bg-dark-950/90 border border-white/[0.06] p-4 font-mono text-xs text-slate-300 leading-relaxed min-h-[220px]">
                 {activeTab === 'stack' && (
                   <div className="space-y-2">
-                    <div className="text-slate-500">// Core Creative Engine</div>
+                    <div className="text-slate-500">// GitHub Verified Architecture</div>
                     <div className="flex justify-between items-center text-slate-200">
-                      <span className="text-accent-cyan">Renderer:</span>
-                      <span>React 18 + Three.js (WebGL 2.0)</span>
+                      <span className="text-accent-cyan">Frontend:</span>
+                      <span>React 18 + TypeScript + Vite</span>
                     </div>
                     <div className="flex justify-between items-center text-slate-200">
-                      <span className="text-accent-violet">Motion:</span>
-                      <span>Framer Motion Spring Orchestrations</span>
+                      <span className="text-accent-violet">Backend:</span>
+                      <span>Node.js + Express + Supabase</span>
                     </div>
                     <div className="flex justify-between items-center text-slate-200">
                       <span className="text-emerald-400">Styling:</span>
-                      <span>Tailwind CSS Modern Design Tokens</span>
+                      <span>Tailwind CSS + Lucide Icons</span>
                     </div>
                     <div className="flex justify-between items-center text-slate-200">
-                      <span className="text-amber-400">Build Tool:</span>
-                      <span>Vite 5 (HMR 12ms average)</span>
+                      <span className="text-amber-400">Security:</span>
+                      <span>JWT Auth + Bcrypt Password Hash</span>
                     </div>
                     <div className="pt-2 border-t border-white/5 flex items-center justify-between text-[11px] text-slate-400">
-                      <span>Status:</span>
-                      <span className="text-emerald-400">● 100% Type-Safe & Responsive</span>
+                      <span>Live Repos:</span>
+                      <span className="text-emerald-400">● 5 Public Repositories Active</span>
                     </div>
                   </div>
                 )}
 
                 {activeTab === 'diagnostics' && (
                   <div className="space-y-3">
-                    <div className="text-slate-500">// Real-time Profiling Metrics</div>
+                    <div className="text-slate-500">// Project Highlights</div>
                     <div className="space-y-1.5">
                       <div className="flex justify-between text-[11px]">
-                        <span>Framerate Stability:</span>
-                        <span className="text-emerald-400 font-bold">59.9 ~ 60.1 FPS</span>
+                        <span>GreenFleet Routing Analytics:</span>
+                        <span className="text-emerald-400 font-bold">Maritime Optimization</span>
                       </div>
                       <div className="w-full bg-dark-800 rounded-full h-1.5 overflow-hidden">
-                        <div className="bg-emerald-400 h-full w-[99%]" />
+                        <div className="bg-emerald-400 h-full w-[95%]" />
                       </div>
                     </div>
                     <div className="space-y-1.5">
                       <div className="flex justify-between text-[11px]">
-                        <span>Lighthouse Score:</span>
-                        <span className="text-accent-cyan font-bold">99 / 100</span>
+                        <span>HackTrack AI Pipeline:</span>
+                        <span className="text-accent-cyan font-bold">Dual Client & Server</span>
                       </div>
                       <div className="w-full bg-dark-800 rounded-full h-1.5 overflow-hidden">
-                        <div className="bg-accent-cyan h-full w-[99%]" />
+                        <div className="bg-accent-cyan h-full w-[92%]" />
                       </div>
                     </div>
                     <div className="space-y-1.5">
                       <div className="flex justify-between text-[11px]">
-                        <span>Interaction Latency:</span>
-                        <span className="text-accent-violet font-bold">&lt; 16ms (Instant)</span>
+                        <span>SmartQueue Architecture:</span>
+                        <span className="text-accent-violet font-bold">Throughput Engine</span>
                       </div>
                       <div className="w-full bg-dark-800 rounded-full h-1.5 overflow-hidden">
-                        <div className="bg-accent-violet h-full w-[95%]" />
+                        <div className="bg-accent-violet h-full w-[88%]" />
                       </div>
                     </div>
                   </div>
@@ -244,12 +264,12 @@ export default function Hero() {
 
                 {activeTab === 'manifesto' && (
                   <div className="space-y-2 text-slate-300">
-                    <div className="text-slate-500">// Design & Engineering Philosophy</div>
+                    <div className="text-slate-500">// Developer Philosophy</div>
                     <p className="text-[12px] text-slate-300 italic">
-                      "I believe code is an artistic medium. A digital experience should feel tactile, fast as thought, and visually magnetic without sacrificing accessibility or web performance."
+                      "I believe great software balances clean code with real-world utility. Every system should be intuitive, responsive, and built with maintainable full-stack foundations."
                     </p>
                     <div className="text-right text-[11px] text-accent-cyan font-semibold">
-                      — Alex Rivera
+                      — {PERSONAL_INFO.name}
                     </div>
                   </div>
                 )}
@@ -259,9 +279,9 @@ export default function Hero() {
               <div className="mt-3 flex items-center justify-between text-[11px] font-mono text-slate-500">
                 <span className="flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-accent-cyan animate-ping" />
-                  Spatial Canvas Sync Active
+                  GitHub Sync Active
                 </span>
-                <span>Ready for Collaboration</span>
+                <span>Open for Collaboration</span>
               </div>
             </div>
           </motion.div>

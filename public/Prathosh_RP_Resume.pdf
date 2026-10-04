@@ -1,0 +1,28 @@
+PRATHOSH R P
+Full Stack & Frontend Engineer
+myselfprathosh240907@gmail.com • https://github.com/Prathosh2407
+
+PROFILE SUMMARY:
+Passionate Full Stack Developer with strong hands-on experience designing and building reactive web applications, intelligent systems, and scalable REST backends. Specialized in React, TypeScript, Tailwind CSS, Node.js, Express, and Supabase.
+
+TECHNICAL SKILLS:
+• Frontend: React 18, TypeScript, JavaScript (ES6+), Tailwind CSS, Vite, Recharts, React Router, Lucide Icons, Responsive UI
+• Backend: Node.js, Express.js, Supabase, SQLite / SQL.js, JWT Authentication, Bcryptjs, Node-Cron, RESTful APIs
+• Tools & Workflow: Git, GitHub, PostCSS, Autoprefixer, ESLint, Environment Security (.env)
+
+FEATURED PROJECTS:
+1. GreenFleet Optimizer (sonic-forge-greenfleet)
+   - Decision-support prototype for shipping companies and fleet managers.
+   - Computes dynamic route planning, speed optimization, and fuel efficiency based on ocean and weather telemetry.
+   - Tech: React, TypeScript, Tailwind CSS, Supabase, Recharts, Vite.
+   - Repo: https://github.com/Prathosh2407/sonic-forge-greenfleet
+
+2. HackTrack AI (Full Stack System)
+   - End-to-end hackathon and developer challenge management platform.
+   - Secure JWT authentication, password hashing with bcryptjs, SQLite/SQL.js database, and automated task schedulers (node-cron).
+   - Tech: React, Node.js, Express, JWT, Bcrypt, SQL.js, Node-Cron.
+   - Repos: https://github.com/Prathosh2407/hacktrack-ai (Frontend) & https://github.com/Prathosh2407/hacktrack-ai-backend (Backend)
+
+3. SmartQueue Platform
+   - Intelligent queue management architecture designed to eliminate customer wait times and boost operational throughput.
+   - Repo: https://github.com/Prathosh2407/Smartqueue
